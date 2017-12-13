@@ -1,7 +1,12 @@
 $(document).ready(function(){
     // inital correct/incorrect guesses start at 0
-    var correctGuesses = 0;
-    var incorrectGuesses = 0;
+    var weasley;
+    var hippogriff;
+    var albus;
+    var candy;
+    var lady;
+    var animagus;
+    var score;
     var harryTheme = new Audio("assets/images/harrytheme.mp3");
     var alohomora = new Audio("assets/images/alohomora.mp3");
     // play Harry Potter Theme on page load
@@ -33,6 +38,19 @@ $(".restart").on("click", function(){
     $(".gameScreen").hide();
     $(".startScreen").show();
     $(".scoreScreen").hide();
+});
+
+$("#harryQuiz").onsubmit(function(){
+    weasley = parseInt($('input[name="weasley"]:checked').value);
+    hippogriff = parseInt($('input[name="hippogriff"]:checked').value);
+    animagus = parseInt($('input[name="animagus"]:checked').value);
+    albus = parseInt($('input[name="albus"]:checked').value);
+    candy = parseInt($('input[name="candy"]:checked').value);
+    lady = parseInt($('input[name="lady"]:checked').value);
+
+    score = weasley + hippogriff + animagus + albus + candy + lady;
+
+    $(".scoreBox").html("You correctly answered" + score + " questions correctly on your O.W.L.");
 });
 
 

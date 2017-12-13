@@ -1,9 +1,10 @@
 body{
-    background: url(assets/images/hogwarts.jpg) no-repeat center center fixed; 
+    background: url(assets/images/hogwarts.jpg) no-repeat center center absolute; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    overflow: auto;
 }
 
 
@@ -20,6 +21,11 @@ div {
    border-radius: 10%;
 }
 
+.gameScreen{
+    margin-bottom: 50%;
+    position: absolute
+}
+
 h1, p{
     color: black;
     font-family: 'Kaushan Script', cursive;
@@ -32,4 +38,8 @@ button{
     background: rgb(111, 111, 172);
     font-family: 'Kaushan Script', cursive;
 
+}
+
+input{
+    font-family: 'Kaushan Script', cursive;
 }
