@@ -12,14 +12,15 @@ div {
    position: fixed;
    width: 50%;
    z-index: 2; 
-   top: 50%;
+   top: 40%;
    left: 40%;
    padding: 5%;
    margin-top: -10%;
    margin-left: -10%;
+   border-radius: 10%;
 }
 
-h1{
+h1, p{
     color: black;
     font-family: 'Kaushan Script', cursive;
 }

@@ -2,6 +2,10 @@ $(document).ready(function(){
     // inital correct/incorrect guesses start at 0
     var correctGuesses = 0;
     var incorrectGuesses = 0;
+    var harryTheme = new Audio("assets/images/harrytheme.mp3");
+    var alohomora = new Audio("assets/images/alohomora.mp3");
+    // play Harry Potter Theme on page load
+    harryTheme.play();
 
 // initial page has game and score screens hidden and start screen showing
     $(".gameScreen").hide();
@@ -10,6 +14,7 @@ $(document).ready(function(){
 
 // once start button is clicked, hide start screen and show game screen. start countdown timer.
 $(".start").on("click", function(){
+    alohomora.play();
     $(".startScreen").hide();
     $(".gameScreen").show();
     $(".scoreScreen").hide();
