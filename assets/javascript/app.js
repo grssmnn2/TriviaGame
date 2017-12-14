@@ -24,24 +24,25 @@ $(document).ready(function () {
         $(".startScreen").hide();
         $(".gameScreen").show();
         $(".scoreScreen").hide();
-        var timer = setInterval(function () {
-            // Get todays date and time
-            var now = new Date().getTime();
-            // make timer subtract current seconds from 30
-            var timeLeft = (now-1);
-            //give user 30 seconds to take quiz
-            var seconds = Math.floor((timeLeft % (1000 * 30)) / 1000);
-          
-            // display time remaining on user screen
-            $("#timer").text("Time Left to Turn in: " + seconds);
-            if(timeLeft < 0){
-                clearInterval(timer);
+        // initial time to submit is 30 seconds
+        var timeLeft = 30;
+        // timer counts down by 1 second, runs countdown function each time
+        var timer = setInterval(countdown, 1000);                      
+            function countdown() {
+                // if time left is 0, let user know and stop timer
+              if (timeLeft == 0) {
+                clearTimeout(timer);
                 $("#timer").text("It takes a bit more studying than that to be an exemplary witch or wizard.");
+              } else {
+                //   otherwise update time with each second
+                $("#timer").text(timeLeft + ' seconds remaining');
+                timeLeft--;
+              }
             }
-        }, 1000);
+   });
 
         // keep track of answers based on user selection, make sure user can only select one box per guess
-        $("#harryQuiz").onsubmit(function () {
+        document.getElementById("harryquiz").onsubmit=function () {
             weasley = parseInt(document.querySelector('input[name="weasley"]:checked').value);
             hippogriff = parseInt(document.querySelector('input[name="hippogriff"]:checked').value);
             animagus = parseInt(document.querySelector('input[name="animagus"]:checked').value);
@@ -51,9 +52,8 @@ $(document).ready(function () {
             // add total number of correct answers together based on values given in html
             score = weasley + hippogriff + animagus + albus + candy + lady;
 
-        });
-    });
-
+        };
+   
     // after submit button is clicked, hide game and start screen and show score screen.
     $(".submit").on("click", function () {
         $(".startScreen").hide();
