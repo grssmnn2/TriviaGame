@@ -21,7 +21,7 @@ div {
    border-radius: 10%;
 }
 
-.gameScreen{
+.gameScreen, .failScreen{
     margin-bottom: 50%;
     position: absolute
 }
@@ -42,4 +42,8 @@ button{
 
 input.text{
     font-family: 'Kaushan Script', cursive;
+}
+
+#snape{
+    width: 500px;
 }

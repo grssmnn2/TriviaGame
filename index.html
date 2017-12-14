@@ -22,6 +22,7 @@
         <p id="timer"></p>
         <h1>Are you more of a Ron or a Hermione? Select your answers below to test your knowledge.</h1>
         <form id = "harryQuiz">
+        <fieldset>
         <p>What is Ron Weasley's middle Name?</p>
         <p><input type="radio" name = "weasley" value = "0">Georgina</p>
         <p><input type="radio" name = "weasley" value = "1">Bilius</p>
@@ -52,15 +53,23 @@
         <p><input type="radio" name = "lady" value = "0">The Strong Lady</p>
         <p><input type="radio" name = "lady" value = "0">The Screaming Lady</p>
 
-        <button type = "submit" class="submit">I've done my best.</button>
+        <button class="submit">I've done my best.</button>
+        </fieldset>
         </form>
 
     </div>
 
     <div class = "scoreScreen">
         <h1>Professor Snape says, "Moderately Satisfactory."</h1>
-        <button class= "restart">Take A New O.W.L.</button>
         <div class="scoreBox"></div>
+        <button class= "restart">Take A New O.W.L.</button>
+       
+    </div>
+
+    <div class="failScreen">
+        <h1>Professor Snape expected this of a student who prefers Quidditch over studying.</h1>
+        <img id="snape" src="assets/images/snape.jpg">
+        <button class="restart">Take Another O.W.L.</button>
     </div>
     
 

@@ -17,6 +17,7 @@ $(document).ready(function () {
     $(".gameScreen").hide();
     $(".startScreen").show();
     $(".scoreScreen").hide();
+    $(".failScreen").hide();
 
     // once start button is clicked, hide start screen and show game screen. start countdown timer.
     $(".start").on("click", function () {
@@ -24,50 +25,55 @@ $(document).ready(function () {
         $(".startScreen").hide();
         $(".gameScreen").show();
         $(".scoreScreen").hide();
+        $(".failScreen").hide();
         // initial time to submit is 30 seconds
         var timeLeft = 30;
         // timer counts down by 1 second, runs countdown function each time
-        var timer = setInterval(countdown, 1000);                      
-            function countdown() {
-                // if time left is 0, let user know and stop timer
-              if (timeLeft == 0) {
-                clearTimeout(timer);
+        var timer = setInterval(countdown, 1000);
+        function countdown() {
+            // if time left is 0, let user know and stop timer
+            if (timeLeft == 0) {
                 $("#timer").text("It takes a bit more studying than that to be an exemplary witch or wizard.");
-              } else {
+                clearTimeout(timer);
+                $(".failScreen").show();
+                $(".gameScreen").hide();
+            } else {
                 //   otherwise update time with each second
                 $("#timer").text(timeLeft + ' seconds remaining');
                 timeLeft--;
-              }
             }
-   });
+        }
+    });
 
-        // keep track of answers based on user selection, make sure user can only select one box per guess
-        document.getElementById("harryquiz").onsubmit=function () {
-            weasley = parseInt(document.querySelector('input[name="weasley"]:checked').value);
-            hippogriff = parseInt(document.querySelector('input[name="hippogriff"]:checked').value);
-            animagus = parseInt(document.querySelector('input[name="animagus"]:checked').value);
-            albus = parseInt(document.querySelector('input[name="albus"]:checked').value);
-            candy = parseInt(document.querySelector('input[name="candy"]:checked').value);
-            lady = parseInt(document.querySelector('input[name="lady"]:checked').value);
-            // add total number of correct answers together based on values given in html
-            score = weasley + hippogriff + animagus + albus + candy + lady;
+    // keep track of answers based on user selection, make sure user can only select one box per guess
+    document.getElementById("harryQuiz").onsubmit = function () {
+        weasley = parseInt(document.querySelector('input[name="weasley"]:checked').value);
+        hippogriff = parseInt(document.querySelector('input[name="hippogriff"]:checked').value);
+        animagus = parseInt(document.querySelector('input[name="animagus"]:checked').value);
+        albus = parseInt(document.querySelector('input[name="albus"]:checked').value);
+        candy = parseInt(document.querySelector('input[name="candy"]:checked').value);
+        lady = parseInt(document.querySelector('input[name="lady"]:checked').value);
+        // add total number of correct answers together based on values given in html
+        score = weasley + hippogriff + animagus + albus + candy + lady;
 
-        };
-   
+    };
+
     // after submit button is clicked, hide game and start screen and show score screen.
     $(".submit").on("click", function () {
         $(".startScreen").hide();
         $(".gameScreen").hide();
+        $(".failScreen").hide();
         $(".scoreScreen").show();
-
+        // display correct number of guesses in scoreBox div
         $(".scoreBox").html("You correctly answered" + score + " questions on your O.W.L.");
     });
 
     // when user clicks restart button, reload game.
     $(".restart").on("click", function () {
         $(".gameScreen").hide();
-        $(".startScreen").show();
         $(".scoreScreen").hide();
+        $(".failScreen").hide();
+        $(".startScreen").show();
     });
 
 
