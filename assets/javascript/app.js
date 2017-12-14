@@ -37,6 +37,7 @@ $(document).ready(function () {
                 clearTimeout(timer);
                 $(".failScreen").show();
                 $(".gameScreen").hide();
+               
             } else {
                 //   otherwise update time with each second
                 $("#timer").text(timeLeft + ' seconds remaining');
@@ -56,6 +57,11 @@ $(document).ready(function () {
         // add total number of correct answers together based on values given in html
         score = weasley + hippogriff + animagus + albus + candy + lady;
 
+         // display correct number of guesses in scoreBox div
+         $(".scoreBox").html("You correctly answered " + score + " questions on your O.W.L.");
+
+        return false;
+
     };
 
     // after submit button is clicked, hide game and start screen and show score screen.
@@ -64,8 +70,7 @@ $(document).ready(function () {
         $(".gameScreen").hide();
         $(".failScreen").hide();
         $(".scoreScreen").show();
-        // display correct number of guesses in scoreBox div
-        $(".scoreBox").html("You correctly answered" + score + " questions on your O.W.L.");
+        
     });
 
     // when user clicks restart button, reload game.
