@@ -34,7 +34,7 @@ $(document).ready(function () {
           
             // display time remaining on user screen
             $("#timer").text("Time Left to Turn in: " + seconds);
-            if(timeLeft <= 0){
+            if(timeLeft < 0){
                 clearInterval(timer);
                 $("#timer").text("It takes a bit more studying than that to be an exemplary witch or wizard.");
             }
@@ -42,12 +42,12 @@ $(document).ready(function () {
 
         // keep track of answers based on user selection, make sure user can only select one box per guess
         $("#harryQuiz").onsubmit(function () {
-            weasley = parseInt($('input[name="weasley"]:checked').value);
-            hippogriff = parseInt($('input[name="hippogriff"]:checked').value);
-            animagus = parseInt($('input[name="animagus"]:checked').value);
-            albus = parseInt($('input[name="albus"]:checked').value);
-            candy = parseInt($('input[name="candy"]:checked').value);
-            lady = parseInt($('input[name="lady"]:checked').value);
+            weasley = parseInt(document.querySelector('input[name="weasley"]:checked').value);
+            hippogriff = parseInt(document.querySelector('input[name="hippogriff"]:checked').value);
+            animagus = parseInt(document.querySelector('input[name="animagus"]:checked').value);
+            albus = parseInt(document.querySelector('input[name="albus"]:checked').value);
+            candy = parseInt(document.querySelector('input[name="candy"]:checked').value);
+            lady = parseInt(document.querySelector('input[name="lady"]:checked').value);
             // add total number of correct answers together based on values given in html
             score = weasley + hippogriff + animagus + albus + candy + lady;
 
