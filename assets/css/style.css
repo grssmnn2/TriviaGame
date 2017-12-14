@@ -21,7 +21,7 @@ div {
    border-radius: 10%;
 }
 
-.gameScreen, .failScreen{
+.gameScreen, .failScreen, .startScreen{
     margin-bottom: 50%;
     position: absolute
 }
@@ -32,10 +32,12 @@ h1, p{
 }
 
 button{
+    color: white;
+    width: 100%;
     display: block;
     margin: 0 auto;
     padding: 5%;
-    background: rgb(111, 111, 172);
+    background: rgb(15, 15, 41);
     font-family: 'Kaushan Script', cursive;
 
 }
@@ -46,4 +48,8 @@ input.text{
 
 #snape{
     width: 500px;
+}
+
+#harry{
+    width: 100%;
 }
