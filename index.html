@@ -14,7 +14,8 @@
 <body style="background-image:url(assets/images/hogwarts.jpg)">
 
     <div class="startScreen">
-        <h1>How well do you know Harry Potter? I hope you studied for your O.W.L. this year.</h1>
+        <h1>How well do you know Harry Potter?</h1>
+        <h1>I hope you studied for your O.W.L. this year.</h1>
         <img id="harry"src="assets/images/harry.jpg">
         <button class="start">Alohomora!</button>
     </div>
@@ -23,7 +24,7 @@
         <p id="timer"></p>
         <h1>Are you more of a Ron or a Hermione? Select your answers below to test your knowledge.</h1>
         <form id = "harryQuiz">
-        <fieldset>
+            
         <p>What is Ron Weasley's middle Name?</p>
         <p><input type="radio" name = "weasley" value = "0">Georgina</p>
         <p><input type="radio" name = "weasley" value = "1">Bilius</p>
@@ -54,14 +55,15 @@
         <p><input type="radio" name = "lady" value = "0">The Strong Lady</p>
         <p><input type="radio" name = "lady" value = "0">The Screaming Lady</p>
 
-        <button class="submit">I've done my best.</button>
-        </fieldset>
+        <p id="submitButton"><input type="submit" value="Submit"/></p>
+        
         </form>
 
     </div>
 
     <div class = "scoreScreen">
         <h1>Professor Snape says, "Moderately Satisfactory."</h1>
+        <img id="snape" src="assets/images/snape.jpg">
         <div class="scoreBox"></div>
         <button class= "restart">Take A New O.W.L.</button>
        

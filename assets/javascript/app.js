@@ -59,7 +59,7 @@ $(document).ready(function () {
     };
 
     // after submit button is clicked, hide game and start screen and show score screen.
-    $(".submit").on("click", function () {
+    $("#submitButton").on("click", function () {
         $(".startScreen").hide();
         $(".gameScreen").hide();
         $(".failScreen").hide();
