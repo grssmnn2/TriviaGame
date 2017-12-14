@@ -59,6 +59,16 @@ $(document).ready(function () {
 
          // display correct number of guesses in scoreBox div
          $(".scoreBox").html("You correctly answered " + score + " questions on your O.W.L.");
+         var result="";
+       
+        if (score == 0) {result = "Snape will have you expelled within the hour."};
+        if (score == 1) {result = "Snape says, 'Are you sure you're supposed to be in this class?'"};
+        if (score == 2) {result = "Maybe a muggle school is more your style."};
+        if (score == 3) {result = "Snape says, 'You'll never reach my level of expertise.'"};
+        if (score == 4) {result = "Snape says, 'Detention. For lack of studying.'"};
+        if (score == 5) {result = "Snape says, 'You'll never reach my level of expertise.'"};
+        if (score == 6) {result = "Snape says, 'Moderately satisfied."};
+        $("h1").html(result); 
 
         return false;
 
