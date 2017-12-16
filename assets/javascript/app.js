@@ -7,6 +7,7 @@ $(document).ready(function () {
     var lady;
     var animagus;
     var score;
+    var timer;
     // sounds to play on page/when buttons are clicked
     var harryTheme = new Audio("assets/images/harrytheme.mp3");
     var alohomora = new Audio("assets/images/alohomora.mp3");
@@ -30,7 +31,7 @@ $(document).ready(function () {
         // initial time to submit is 30 seconds
         var timeLeft = 30;
         // timer counts down by 1 second, runs countdown function each time
-        var timer = setInterval(countdown, 1000);
+        timer = setInterval(countdown, 1000);
         function countdown() {
             // if time left is 0, let user know and stop timer
             if (timeLeft == 0) {
@@ -77,6 +78,7 @@ $(document).ready(function () {
 
     // after submit button is clicked, hide game and start screen and show score screen.
     $("#submitButton").on("click", function () {
+        clearInterval(timer);
         $(".startScreen").hide();
         $(".gameScreen").hide();
         $(".failScreen").hide();
