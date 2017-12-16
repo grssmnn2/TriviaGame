@@ -24,6 +24,7 @@ $(document).ready(function () {
         alohomora.play();
         $(".startScreen").hide();
         $(".gameScreen").show();
+        $("body").css("background-image", "url(assets/images/quidditch.jpg)");
         $(".scoreScreen").hide();
         $(".failScreen").hide();
         // initial time to submit is 30 seconds
@@ -34,7 +35,7 @@ $(document).ready(function () {
             // if time left is 0, let user know and stop timer
             if (timeLeft == 0) {
                 $("#timer").text("It takes a bit more studying than that to be an exemplary witch or wizard.");
-                clearTimeout(timer);
+                clearInterval(timer);
                 $(".failScreen").show();
                 $(".gameScreen").hide();
                
@@ -61,14 +62,14 @@ $(document).ready(function () {
          $(".scoreBox").html("You correctly answered " + score + " questions on your O.W.L.");
          var result="";
        
-        if (score == 0) {result = "Snape will have you expelled within the hour."};
-        if (score == 1) {result = "Snape says, 'Are you sure you're supposed to be in this class?'"};
+        if (score == 0) {result = "Professor Snape will have you expelled within the hour."};
+        if (score == 1) {result = "Professor Snape says, 'Are you sure you're supposed to be in this class?'"};
         if (score == 2) {result = "Maybe a muggle school is more your style."};
-        if (score == 3) {result = "Snape says, 'You'll never reach my level of expertise.'"};
-        if (score == 4) {result = "Snape says, 'Detention. For lack of studying.'"};
-        if (score == 5) {result = "Snape says, 'You'll never reach my level of expertise.'"};
-        if (score == 6) {result = "Snape says, 'Moderately satisfied."};
-        $("h1").html(result); 
+        if (score == 3) {result = "Professor Snape says, 'You'll never reach my level of expertise.'"};
+        if (score == 4) {result = "Professor Snape says, 'Detention. For lack of studying.'"};
+        if (score == 5) {result = "Professor Snape says, 'I see you've been studying with Miss Granger.'"};
+        if (score == 6) {result = "Professor Snape says, 'Moderately satisfied."};
+        $("#snapeResponse").html(result); 
 
         return false;
 
@@ -80,6 +81,8 @@ $(document).ready(function () {
         $(".gameScreen").hide();
         $(".failScreen").hide();
         $(".scoreScreen").show();
+        $("body").css("background-image", "url(assets/images/greathall.jpg)");
+       
         
     });
 
