@@ -6,7 +6,9 @@ $(document).ready(function () {
     var candy;
     var lady;
     var animagus;
+    // variables for score and timer which update based on specific game
     var score;
+    var incorrect;
     var timer;
     // sounds to play on page/when buttons are clicked
     var harryTheme = new Audio("assets/images/harrytheme.mp3");
@@ -58,9 +60,10 @@ $(document).ready(function () {
         lady = parseInt(document.querySelector('input[name="lady"]:checked').value);
         // add total number of correct answers together based on values given in html
         score = weasley + hippogriff + animagus + albus + candy + lady;
+        incorrect = (6-score);
 
          // display correct number of guesses in scoreBox div
-         $(".scoreBox").html("You correctly answered " + score + " questions on your O.W.L.");
+         $(".scoreBox").html("You answered " + score + " questions correctly and " + incorrect +" incorrectly on your O.W.L.");
          var result="";
        
         if (score == 0) {result = "Professor Snape will have you expelled within the hour."};
