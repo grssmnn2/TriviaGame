@@ -37,7 +37,6 @@ $(document).ready(function () {
         function countdown() {
             // if time left is 0, let user know and stop timer
             if (timeLeft == 0) {
-                $("#timer").text("It takes a bit more studying than that to be an exemplary witch or wizard.");
                 clearInterval(timer);
                 $(".failScreen").show();
                 $(".gameScreen").hide();
@@ -74,7 +73,7 @@ $(document).ready(function () {
         if (score == 5) {result = "Professor Snape says, 'I see you've been studying with Miss Granger.'"};
         if (score == 6) {result = "Professor Snape says, 'Moderately satisfied."};
         $("#snapeResponse").html(result); 
-
+        // must add in to keep page from refreshing and showing start screen immediately
         return false;
 
     };
