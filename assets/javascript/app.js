@@ -57,14 +57,14 @@ $(document).ready(function () {
         albus = parseInt(document.querySelector('input[name="albus"]:checked').value);
         candy = parseInt(document.querySelector('input[name="candy"]:checked').value);
         lady = parseInt(document.querySelector('input[name="lady"]:checked').value);
-        // add total number of correct answers together based on values given in html
+        // add total number of correct and incorrect answers together based on values given in html
         score = weasley + hippogriff + animagus + albus + candy + lady;
         incorrect = (6-score);
 
          // display correct number of guesses in scoreBox div
          $(".scoreBox").html("You answered " + score + " questions correctly and " + incorrect +" incorrectly on your O.W.L.");
          var result="";
-       
+    //    snapes response changes based on number of correct answers
         if (score == 0) {result = "Professor Snape will have you expelled within the hour."};
         if (score == 1) {result = "Professor Snape says, 'Are you sure you're supposed to be in this class?'"};
         if (score == 2) {result = "Maybe a muggle school is more your style."};
@@ -85,6 +85,7 @@ $(document).ready(function () {
         $(".gameScreen").hide();
         $(".failScreen").hide();
         $(".scoreScreen").show();
+        // change background image to show great hall
         $("body").css("background-image", "url(assets/images/greathall.jpg)");
        
         
