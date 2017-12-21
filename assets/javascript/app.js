@@ -25,6 +25,7 @@ $(document).ready(function () {
     // once start button is clicked, hide start screen and show game screen. start countdown timer.
     $(".start").on("click", function () {
         alohomora.play();
+        //  $('input[[name=lady], [name=candy], [name=animagus], [name=hippogriff], [name=albus], [name=weasley]]').attr('checked',false);
         $(".startScreen").hide();
         $(".gameScreen").show();
         $("body").css("background-image", "url(assets/images/quidditch.jpg)");
@@ -97,6 +98,7 @@ $(document).ready(function () {
         $(".scoreScreen").hide();
         $(".failScreen").hide();
         $(".startScreen").show();
+        $('input').prop('checked',false);
     });
 
 
