@@ -41,7 +41,7 @@ $(document).ready(function () {
                 clearInterval(timer);
                 $(".failScreen").show();
                 $(".gameScreen").hide();
-               
+
             } else {
                 //   otherwise update time with each second
                 $("#timer").text(timeLeft + ' seconds remaining');
@@ -60,20 +60,20 @@ $(document).ready(function () {
         lady = parseInt(document.querySelector('input[name="lady"]:checked').value);
         // add total number of correct and incorrect answers together based on values given in html
         score = weasley + hippogriff + animagus + albus + candy + lady;
-        incorrect = (6-score);
+        incorrect = (6 - score);
 
-         // display correct number of guesses in scoreBox div
-         $(".scoreBox").html("You answered " + score + " questions correctly and " + incorrect +" incorrectly on your O.W.L.");
-         var result="";
-    //    snapes response changes based on number of correct answers
-        if (score == 0) {result = "Professor Snape will have you expelled within the hour."};
-        if (score == 1) {result = "Professor Snape says, 'Are you sure you're supposed to be in this class?'"};
-        if (score == 2) {result = "Maybe a muggle school is more your style."};
-        if (score == 3) {result = "Professor Snape says, 'You'll never reach my level of expertise.'"};
-        if (score == 4) {result = "Professor Snape says, 'Detention. For lack of studying.'"};
-        if (score == 5) {result = "Professor Snape says, 'I see you've been studying with Miss Granger.'"};
-        if (score == 6) {result = "Professor Snape says, 'Moderately satisfied."};
-        $("#snapeResponse").html(result); 
+        // display correct number of guesses in scoreBox div
+        $(".scoreBox").html("You answered " + score + " questions correctly and " + incorrect + " incorrectly on your O.W.L.");
+        var result = "";
+        //    snapes response changes based on number of correct answers
+        if (score == 0) { result = "Professor Snape will have you expelled within the hour." };
+        if (score == 1) { result = "Professor Snape says, 'Are you sure you're supposed to be in this class?'" };
+        if (score == 2) { result = "Maybe a muggle school is more your style." };
+        if (score == 3) { result = "Professor Snape says, 'You'll never reach my level of expertise.'" };
+        if (score == 4) { result = "Professor Snape says, 'Detention. For lack of studying.'" };
+        if (score == 5) { result = "Professor Snape says, 'I see you've been studying with Miss Granger.'" };
+        if (score == 6) { result = "Professor Snape says, 'Moderately satisfied." };
+        $("#snapeResponse").html(result);
         // must add in to keep page from refreshing and showing start screen immediately
         return false;
 
@@ -88,8 +88,8 @@ $(document).ready(function () {
         $(".scoreScreen").show();
         // change background image to show great hall
         $("body").css("background-image", "url(assets/images/greathall.jpg)");
-       
-        
+
+
     });
 
     // when user clicks restart button, reload game.
@@ -98,7 +98,8 @@ $(document).ready(function () {
         $(".scoreScreen").hide();
         $(".failScreen").hide();
         $(".startScreen").show();
-        $('input').prop('checked',false);
+        // uncheck boxes when new game starts
+        $('input').prop('checked', false);
     });
 
 
